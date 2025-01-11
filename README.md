@@ -1,3 +1,3 @@
 # Pitiyas-Gemstones
 
-Visit Website: https://www.pitiyasgemstones.com.et/
+[Visit the Website](https://www.pitiyasgemstones.com.et/)
