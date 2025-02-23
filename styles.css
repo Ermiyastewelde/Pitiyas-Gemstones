@@ -1,3 +1,4 @@
+/* Universal styles */
 * {
   margin: 0;
   padding: 0;
@@ -55,6 +56,15 @@ body {
   opacity: 1;
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1rem; /* Reduced padding for mobile */
+  }
+  .nav-links {
+    gap: 1rem; /* Tighten gap for smaller screens */
+  }
+}
+
 /* Hero */
 .hero {
   position: relative;
@@ -63,6 +73,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  max-width: 100%; /* Prevent overflow */
 }
 
 .hero-video {
@@ -131,21 +142,18 @@ body {
   color: #000000;
 }
 
-/* Target anchor tags directly */
 .cta-btn a {
-  text-decoration: none;  /* Remove underline */
-  color: inherit;         /* Inherit text color from button */
-  outline: none;          /* Remove outline */
-  box-shadow: none;       /* Remove any shadow or glow effect */
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  box-shadow: none;
 }
 
-/* Specifically remove blue outline when focused or clicked on a link */
 .cta-btn a:focus,
 .cta-btn a:active {
-  outline: none;  /* Remove outline */
-  box-shadow: none; /* Remove any box-shadow or focus effect */
+  outline: none;
+  box-shadow: none;
 }
-
 
 .scroll-indicator {
   position: absolute;
@@ -176,7 +184,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 45vw, 250px), 1fr));
   gap: clamp(1rem, 3vw, 2rem);
-  max-width: 1200px;
+  max-width: 100%; /* Changed from 1200px to fit viewport */
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -209,20 +217,18 @@ body {
 
 @media (max-width: 480px) {
   .gallery {
-      padding: 2rem 0.5rem;
+    padding: 2rem 0.5rem;
   }
-
   .gallery-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 0.5rem; /* Adjusted padding */
   }
-
   .polaroid {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
-
   .polaroid:hover {
-      transform: scale(1.02);
+    transform: scale(1.02);
   }
 }
 
@@ -235,8 +241,9 @@ body {
   padding: 6rem 3rem;
   background: #000000;
   gap: 2rem;
-  max-width: 1400px;
+  max-width: 100%; /* Changed from 1400px */
   margin: 0 auto;
+  overflow-x: hidden; /* Reinforce no horizontal scroll */
 }
 
 .contact {
@@ -264,7 +271,8 @@ body {
   margin: 0 auto;
 }
 
-.contact input, .contact textarea {
+.contact input,
+.contact textarea {
   padding: 0.8rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
   background: rgba(255, 255, 255, 0.05);
@@ -373,30 +381,26 @@ body {
 
 @media (max-width: 768px) {
   .contact-footer-container {
-      flex-direction: column;
-      padding: 3rem 1rem;
-      gap: 2rem;
+    flex-direction: column;
+    padding: 3rem 1rem; /* Reduced padding */
+    gap: 2rem;
   }
-
   .contact,
   .footer-sidebar {
-      flex: none;
-      width: 100%;
+    flex: none;
+    width: 100%;
   }
-
   .social-links {
-      flex-direction: row;
-      justify-content: center;
-      gap: 2rem;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
   }
-
   .social-icon span {
-      display: none;
+    display: none;
   }
-
   .social-icon svg {
-      width: 28px;
-      height: 28px;
+    width: 28px;
+    height: 28px;
   }
 }
 
@@ -419,7 +423,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 30vw, 400px), 1fr));
   gap: clamp(1rem, 2vw, 2rem);
-  max-width: 1400px;
+  max-width: 100%; /* Changed from 1400px */
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -462,23 +466,17 @@ body {
 
 @media (max-width: 480px) {
   .full-gallery {
-      padding: 3rem 0.5rem;
+    padding: 3rem 0.5rem;
   }
-
   .gallery-grid-full {
-      grid-template-columns: 1fr;
-      gap: 1rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 0.5rem; /* Adjusted padding */
   }
-
   .gallery-item p {
-      font-size: 0.9rem;
+    font-size: 0.9rem;
   }
 }
-
-
-
-
-
 
 /* About */
 .about {
@@ -489,6 +487,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 100%; /* Prevent overflow */
 }
 
 .about h1 {
@@ -515,14 +514,12 @@ body {
 
 @media (max-width: 480px) {
   .about {
-      padding: 3rem 1rem;
+    padding: 3rem 1rem;
   }
-
   .about h1 {
-      font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
   }
-
   .about-content p {
-      font-size: 0.95rem;
+    font-size: 0.95rem;
   }
 }
